@@ -1,0 +1,22 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="as" id="add-relations-to-tables">
+        <addForeignKeyConstraint baseTableName="orders"
+                                 baseColumnNames="smartphoneId"
+                                 constraintName="fk_smartphne_order"
+                                 referencedTableName="smartphone"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="orders"
+                                 baseColumnNames="clientId"
+                                 constraintName="fk_order_client"
+                                 referencedTableName="client"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="adress"
+                                 baseColumnNames="id"
+                                 constraintName="fk_client_address"
+                                 referencedTableName="client"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
