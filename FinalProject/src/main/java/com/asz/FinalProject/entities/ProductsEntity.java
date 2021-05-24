@@ -3,6 +3,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -24,5 +25,6 @@ public class ProductsEntity {
     @JoinColumn(name = "type")
     private ProductCategoryEntity productCategoryEntity;
 
-
+    @OneToMany(mappedBy = "orderDetailsEntity")
+    private Set<OrderDetailsEntity> orderDetailsEntities;
 }
