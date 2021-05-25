@@ -1,7 +1,6 @@
 package com.asz.FinalProject.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
@@ -9,8 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "orders")
-@Getter
-@Setter
+@Data
 public class OrdersEntity {
 
     @Id
@@ -25,9 +23,6 @@ public class OrdersEntity {
 
     @Column(name = "status")
     private String status;
-
-    @Column(name = "client_id")
-    private Long clientId;
 
     @OneToMany(mappedBy = "ordersEntity")
     private Set<OrderDetailsEntity> orderDetailsEntities;

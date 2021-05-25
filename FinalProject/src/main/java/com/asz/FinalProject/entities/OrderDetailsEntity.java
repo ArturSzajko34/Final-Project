@@ -1,22 +1,18 @@
 package com.asz.FinalProject.entities;
 
-
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.Data;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "orderdetails")
-@Getter
-@Setter
+@Data
 public class OrderDetailsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "quantityOrdered")
+    @Column(name = "quantity_ordered")
     private Long quantityOrdered;
 
     @ManyToOne

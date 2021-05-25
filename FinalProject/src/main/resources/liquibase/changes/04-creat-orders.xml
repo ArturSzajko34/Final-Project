@@ -7,10 +7,10 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="orderDate" type="timestamp"/>
-            <column name="orderPrice" type="bigint"/>
+            <column name="order_date" type="timestamp"/>
+            <column name="order_price" type="bigint"/>
             <column name="status" type="varchar(255)"/>
-            <column name="clientId" type="bigint"/>
+            <column name="client_id" type="bigint"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

@@ -7,9 +7,9 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="productId" type="bigint"/>
-            <column name="ordersId" type="bigint"/>
-            <column name="quantityOrdered" type="bigint"/>
+            <column name="product_id" type="bigint"/>
+            <column name="orders_id" type="bigint"/>
+            <column name="quantity_ordered" type="bigint"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

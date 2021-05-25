@@ -1,7 +1,9 @@
 package com.asz.FinalProject.repositories;
 
+import com.asz.FinalProject.entities.ProductsEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductsRepository {
+public interface ProductsRepository extends JpaRepository<ProductsEntity, Long> {
 }

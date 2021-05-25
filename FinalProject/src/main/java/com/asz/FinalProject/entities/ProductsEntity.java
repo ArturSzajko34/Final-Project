@@ -1,14 +1,12 @@
 package com.asz.FinalProject.entities;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "products")
-@Getter
-@Setter
+@Data
 public class ProductsEntity {
 
     @Id
@@ -25,6 +23,6 @@ public class ProductsEntity {
     @JoinColumn(name = "type")
     private ProductCategoryEntity productCategoryEntity;
 
-    @OneToMany(mappedBy = "orderDetailsEntity")
+    @OneToMany(mappedBy = "productsEntity")
     private Set<OrderDetailsEntity> orderDetailsEntities;
 }
