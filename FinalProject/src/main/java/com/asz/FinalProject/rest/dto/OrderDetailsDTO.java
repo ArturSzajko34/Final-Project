@@ -2,10 +2,15 @@ package com.asz.FinalProject.rest.dto;
 
 import com.asz.FinalProject.entities.OrdersEntity;
 import com.asz.FinalProject.entities.ProductsEntity;
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 public class OrderDetailsDTO {
 
     private Long id;

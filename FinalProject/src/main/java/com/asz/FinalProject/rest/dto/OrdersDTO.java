@@ -2,12 +2,17 @@ package com.asz.FinalProject.rest.dto;
 
 import com.asz.FinalProject.entities.ClientEntity;
 import com.asz.FinalProject.entities.OrderDetailsEntity;
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 public class OrdersDTO {
 
     private Long id;

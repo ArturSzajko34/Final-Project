@@ -1,12 +1,15 @@
 package com.asz.FinalProject.entities;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "products")
-@Data
+@Getter
+@Setter
 public class ProductsEntity {
 
     @Id
