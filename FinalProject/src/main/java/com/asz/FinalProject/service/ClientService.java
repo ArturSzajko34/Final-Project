@@ -30,7 +30,6 @@ public class ClientService {
     public void deleteClientById(Long id) {
         if (validationIfTheClientExists(id)) {
             clientRepository.deleteById(id);
-            addressRepository.deleteById(id);
         }
     }
 
@@ -40,6 +39,24 @@ public class ClientService {
             return true;
         } else {
             throw new IllegalArgumentException("does not exist id: " + id);
+        }
+    }
+
+    public ClientDTO editClient(Long id, ClientDTO clientDTO) {
+        Optional<ClientEntity> optionalClient = clientRepository.findById(id);
+        if (optionalClient.isPresent()) {
+            ClientEntity clientEntity = optionalClient.get();
+            clientEntity.setName(clientDTO.getName());
+            clientEntity.getAddressEntity().setCity(clientDTO.getAddress().getCity());
+            clientEntity.getAddressEntity().setCountry(clientDTO.getAddress().getCountry());
+            ClientEntity save = clientRepository.save(clientEntity);
+            return EntityDtoMapper.mapClientToDTO(save);
+        }
+            //TODO jak zwrócic adres
+        else{
+            ClientEntity clientEntity1 = EntityDtoMapper.mapClientToEntity(clientDTO);
+            ClientEntity save = clientRepository.save(clientEntity1);
+            return EntityDtoMapper.mapClientToDTO(save);
         }
     }
 }

@@ -22,4 +22,10 @@ public class ClientController {
         clientService.deleteClientById(id);
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/client/{id}")
+    public ClientDTO editClient(@PathVariable(name = "id") Long id,
+                                @RequestBody ClientDTO clientDTO) {
+        return clientService.editClient(id, clientDTO);
+    }
 }

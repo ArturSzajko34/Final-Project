@@ -1,5 +1,5 @@
 package com.asz.FinalProject.entities;
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.Setter;
 
