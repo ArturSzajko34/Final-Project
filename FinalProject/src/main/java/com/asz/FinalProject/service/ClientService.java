@@ -2,7 +2,6 @@ package com.asz.FinalProject.service;
 
 import com.asz.FinalProject.entities.AddressEntity;
 import com.asz.FinalProject.entities.ClientEntity;
-import com.asz.FinalProject.repositories.AddressRepository;
 import com.asz.FinalProject.repositories.ClientRepository;
 import com.asz.FinalProject.rest.dto.ClientDTO;
 import com.asz.FinalProject.util.EntityDtoMapper;
@@ -16,7 +15,6 @@ import java.util.Optional;
 public class ClientService {
 
     private final ClientRepository clientRepository;
-    private final AddressRepository addressRepository;
 
     public ClientDTO addClient(ClientDTO clientDTO) {
         ClientEntity clientEntity = EntityDtoMapper.mapClientToEntity(clientDTO); //get client
